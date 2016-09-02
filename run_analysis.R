@@ -12,15 +12,9 @@ require("reshape2")
 
 # Extracting only the measurements on the mean and standard deviation for each measurement. 
   extract_features <- grepl("mean|std", features) 
- 
 
-# Load and process X_test & Y_test data. 
-  X_test <- read.table("./UCI HAR Dataset/test/X_test.txt") 
-  Y_test <- read.table("./UCI HAR Dataset/test/y_test.txt") 
-  subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt") 
- 
 
-# Loading and process X_train and Y_train data. 
+# Loading and process X_train and Y_train data
    X_train <- read.table("./UCI HAR Dataset/train/X_train.txt") 
    Y_train <- read.table("./UCI HAR Dataset/train/Y_train.txt") 
  
@@ -35,7 +29,7 @@ require("reshape2")
    X_train = X_train[,extract_features] 
  
 
- # Load activity data 
+ # Loading activity data 
    Y_train[,2] = activity_labels[Y_train[,1]] 
    names(Y_train) = c("Activity_ID", "Activity_Label") 
    names(subject_train) = "subject" 
@@ -44,11 +38,19 @@ require("reshape2")
  # Binding the data 
    train_data <- cbind(as.data.table(subject_train), Y_train, X_train)
 
+  # Loading and process X_test and Y_test data
+  X_test <- read.table("./UCI HAR Dataset/test/X_test.txt") 
+  Y_test <- read.table("./UCI HAR Dataset/test/Y_test.txt") 
+  
+  
+  subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt") 
+ 
+
   names(X_test) = features 
  
 
  # Extracting only the measurements on the mean and standard deviation for each measurement. 
- X_test = X_test[,extract_features] 
+ X_test = X_test[, extract_features] 
  
 
 # Loading activity labels 
