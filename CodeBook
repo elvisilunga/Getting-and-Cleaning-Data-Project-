@@ -5,7 +5,7 @@ This is a file called codebook, it describes  the data, the variables, and any t
 The data is obtained from the following links:
 
 •Data used in the project: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-•Description of the dataset: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+•Description of the origin of the dataset: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 Description of the data
 
@@ -30,16 +30,16 @@ The data set itself includes the following files:
 •'train/X_train.txt': Training set.
 
 
-•'train/y_train.txt': Training labels.
+•'train/Y_train.txt': Training labels.
 
 
 •'test/X_test.txt': Test set.
 
 
-•'test/y_test.txt': Test labels.
+•'test/Y_test.txt': Test labels.
 
 
-The following files are available for the training and test data.
+The y_train.txt and y_test.txt files are renamed into Y_train.txt and Y_test.text to match their X counterparts
 
 •'train/subject_train.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 
@@ -52,10 +52,8 @@ The following files are available for the training and test data.
 
 •'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
+The five main stages are:
 
-Transformations
-
-There are 5 parts:
 1.Merging the two data sets training and the test sets to create one data set.
 2.Extraction of the measurements on the mean and standard deviation only for each measurement.
 3.Introduction of descriptive activity names to name the activities in the data set
@@ -65,7 +63,7 @@ There are 5 parts:
 Implementation of different steps through run_analysis.R
 
 •Require  reshapre2  and  data.table  librareis
-•Load both test and train data
+•Load both training and test data
 •Load the features and activity labels
 •Extract the mean and standard deviation column names and data
 •Process the data
