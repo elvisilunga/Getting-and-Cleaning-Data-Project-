@@ -52,19 +52,4 @@ The y_train.txt and y_test.txt files are renamed into Y_train.txt and Y_test.tex
 
 •'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
-The five main stages are:
 
-1.Merging the two data sets training and the test sets to create one data set.
-2.Extraction of the measurements on the mean and standard deviation only for each measurement.
-3.Introduction of descriptive activity names to name the activities in the data set
-4.Labelling the data set with appropriate descriptive activity names.
-5.Creation of a second, independent tidy data set with the average of each variable for each activity and each subject.
-
-Implementation of different steps through run_analysis.R
-
-•Require  reshapre2  and  data.table  librareis
-•Load both training and test data
-•Load the features and activity labels
-•Extract the mean and standard deviation column names and data
-•Process the data
-•Merge data set.
